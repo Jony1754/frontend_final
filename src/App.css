@@ -21,7 +21,17 @@ header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
 header .search-container {
   margin-top: calc(20vh - 70px);
+}
+
+.admin-button {
+  background-color: #363131;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }

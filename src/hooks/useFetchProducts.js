@@ -9,16 +9,19 @@ const useFetchProducts = () => {
     productsPerPage,
     searchTerm,
     selectedCategory,
+    setIsLoading,
   } = useContext(ProductContext);
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setIsLoading(true);
       let url = 'https://fakestoreapi.com/products';
       if (selectedCategory) {
         url += `/category/${selectedCategory}`;
       }
       const response = await fetch(url);
       const data = await response.json();
+      setIsLoading(false);
 
       const filteredData = searchTerm
         ? data.filter((product) =>
