@@ -1,0 +1,15 @@
+.full-star {
+  color: gold;
+}
+
+.half-star {
+  color: gold;
+}
+
+.empty-star {
+  color: lightgray;
+}
+
+.star-rating {
+  font-size: 20px;
+}

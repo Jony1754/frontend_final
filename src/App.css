@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+header {
+  background-image: url(./assets/background.png);
+  background-size: contain;
+  background-position: center;
+  background-color: #363131;
+  background-repeat: no-repeat;
+  margin-bottom: 100px;
+  height: 20vh;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* displace the search container to be in the middle of the bottom line of the header */
+
+header .search-container {
+  margin-top: calc(20vh - 70px);
+}
