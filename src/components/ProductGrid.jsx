@@ -3,11 +3,11 @@ import { ProductContext } from '../contexts/ProductContext';
 import ProductCard from './ProductCard';
 import '../styles/productgrid.css';
 const ProductGrid = () => {
-  const { products } = useContext(ProductContext);
+  const { displayedProducts } = useContext(ProductContext);
 
   return (
     <div className='product-grid'>
-      {products.map((product) => (
+      {displayedProducts.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
     </div>

@@ -1,0 +1,39 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+  background-color: white;
+  position: relative;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+.pagination-text {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.pagination-green-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 10px;
+  background-color: #2af598;
+}
+
+.pagination button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  margin-right: 10px;
+  color: white;
+  font-weight: bold;
+  background-color: #2af598;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}

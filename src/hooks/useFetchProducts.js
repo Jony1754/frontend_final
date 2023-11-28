@@ -2,8 +2,14 @@ import { useContext, useEffect } from 'react';
 import { ProductContext } from '../contexts/ProductContext';
 
 const useFetchProducts = () => {
-  const { setProducts, searchTerm, selectedCategory } =
-    useContext(ProductContext);
+  const {
+    setAllProducts,
+    setDisplayedProducts,
+    currentPage,
+    productsPerPage,
+    searchTerm,
+    selectedCategory,
+  } = useContext(ProductContext);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -13,22 +19,27 @@ const useFetchProducts = () => {
       }
       const response = await fetch(url);
       const data = await response.json();
-      if (searchTerm) {
-        setProducts(
-          data.filter((product) =>
+
+      const filteredData = searchTerm
+        ? data.filter((product) =>
             product.title.toLowerCase().includes(searchTerm.toLowerCase())
           )
-        );
-      } else {
-        setProducts(data);
-      }
+        : data;
+
+      setAllProducts(filteredData);
+      const startIndex = (currentPage - 1) * productsPerPage;
+      const endIndex = startIndex + productsPerPage;
+      setDisplayedProducts(filteredData.slice(startIndex, endIndex));
     };
 
     fetchProducts();
   }, [
     searchTerm,
     selectedCategory,
-    setProducts /* eslint-disable-line react-hooks/exhaustive-deps */,
+    currentPage,
+    productsPerPage,
+    setAllProducts,
+    setDisplayedProducts,
   ]);
 
   return null;

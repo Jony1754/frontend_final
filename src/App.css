@@ -21,7 +21,6 @@ header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* displace the search container to be in the middle of the bottom line of the header */
 
 header .search-container {
   margin-top: calc(20vh - 70px);

@@ -1,6 +1,13 @@
 /* eslint-disable react/prop-types */
 import '../styles/productcard.css';
 import { Rating } from './Rating';
+import { users } from '../utils/users';
+
+const getRandomUser = () => {
+  const randomIndex = Math.floor(Math.random() * users.length);
+  return users[randomIndex];
+};
+
 const ProductCard = ({ product }) => {
   return (
     <div className='product-card'>
@@ -13,7 +20,11 @@ const ProductCard = ({ product }) => {
       </div>
       <hr />
       <div className='rating'>
-        <Rating rating={product.rating.rate} />({product.rating.count} votos)
+        <Rating rating={product.rating.rate} />
+        <div className='rating-image'>
+          <img src={getRandomUser().image} alt='' className='profile' />
+          <p className='name'>{getRandomUser().username}</p>
+        </div>
       </div>
     </div>
   );
